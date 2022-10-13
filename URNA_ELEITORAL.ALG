@@ -1,12 +1,13 @@
 Algoritmo "URNA-ELEITORAL"
-// Disciplina   : [Linguagem e Lï¿½gica de Programaï¿½ï¿½o]
+// Disciplina   : [Linguagem e Lógica de Programação]
 // Professor   : Antonio Carlos Nicolodi
-// Descriï¿½ï¿½o   : Aqui vocï¿½ descreve o que o programa faz! (funï¿½ï¿½o)
+// Descrição   : Aqui você descreve o que o programa faz! (função)
 // Autor(a)    : Nome Claudio Clay
 // Data atual  : 10/10/2022
 Var
-// Seï¿½ï¿½o de Declaraï¿½ï¿½es das variï¿½veis
+// Seção de Declarações das variáveis
    numeroCandidato1: inteiro
+   numeroCandidato2: inteiro
    numeroCandidato3: inteiro
    nomeCandidato1: caractere
    nomeCandidato2: caractere
@@ -22,7 +23,7 @@ Var
    resposta2: caracter
 
 Inicio
-// Seï¿½ï¿½o de Comandos, procedimento, funï¿½ï¿½es, operadores, etc...
+// Seção de Comandos, procedimento, funções, operadores, etc...
 
    contCandidato1 <- 0
    contCandidato2 <- 0
@@ -51,14 +52,14 @@ Inicio
 
    limpatela
 
-   escreval("============ZERï¿½ZIMA============")
+   escreval("============ZERÉZIMA============")
    escreval(numeroCandidato1, " - ", nomeCandidato1, ":")
    escreval(numeroCandidato2, " - ", nomeCandidato2, ":")
    escreval(numeroCandidato3, " - ", nomeCandidato3, ":")
    escreval("0-Branco", contBranco)
    escreval("Votos Nulos", contNulo)
    escreval("")
-   escreval("iniciando a eleiï¿½ï¿½o.")
+   escreval("iniciando a eleição.")
 
    //timer(500)
 
@@ -73,7 +74,7 @@ Inicio
 
    repita
     repita
-     escreva("Informe o nï¿½mero do candidato: ")
+     escreva("Informe o número do candidato: ")
      leia(voto)
      escreva(".")
 
@@ -97,14 +98,31 @@ Inicio
 
      escreva("")
      escreva("Deseja confirmar o seu voto? (s) ou (n)")
+     
+     se(voto = numeroCandidato1)e(resposta="n")ENTAO
+          contCandidato1 <- contCandidato1 - 1
+     fimse
+     se(voto = numeroCandidato2)e(resposta="n")ENTAO
+          contCandidato2 <- contCandidato2 - 1
+     fimse
+     se(voto = numeroCandidato3)e(resposta="n")ENTAO
+          contCandidato3 <- contCandidato3 - 1
+     fimse
+     se(voto = 0)e(resposta="n")ENTAO
+          contBranco <- contBranco - 1
+     fimse
+     se(voto = -1)e(resposta="n")ENTAO
+          contNulo <- contNulo - 1
+     fimse
+     
      leia(resposta)
     ate(resposta <> "n")
-     escreva("Ainda hï¿½ mais eleitores para votar? (s) ou (n)")
+     escreva("Ainda há mais eleitores para votar? (s) ou (n)")
      leia(resposta2)
     ate(resposta2 <> "s")
 
 
-   escreval("============ZERï¿½ZIMA============")
+   escreval("============ZERÉZIMA============")
    escreval(nomeCandidato1, ":", contCandidato1)
    escreval(nomeCandidato2, ":", contCandidato2)
    escreval(nomeCandidato3, ":", contCandidato3)
