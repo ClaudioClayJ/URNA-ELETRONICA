@@ -1,9 +1,8 @@
 Algoritmo "URNA-ELEITORAL"
 // Disciplina   : [Linguagem e Lógica de Programação]
-// Professor   : Antonio Carlos Nicolodi
-// Descrição   : Aqui você descreve o que o programa faz! (função)
+// Professor   : Erisvaldo
 // Autor(a)    : Nome Claudio Clay
-// Data atual  : 10/10/2022
+// Data atual  : 14/10/2022
 Var
 // Seção de Declarações das variáveis
    numeroCandidato1: inteiro
@@ -32,6 +31,9 @@ Inicio
    contBranco <- 0
 
    //Solicita o numero e o nome do candidato 1
+   
+   escreval("-----INICIANDO ELEIÇÃO-----")
+   
    escreva("Informe o nome do cadidato 1: ")
    leia(nomeCandidato1)
 
@@ -61,4 +63,71 @@ Inicio
    escreval("")
    escreval("iniciando a eleição.")
 
+   //timer(500)
+
+   //para i de 0 ate 10 passo 1 faca
+   //escreva(".")
+
+   //fimpara
+
+   timer(0)
+
+   limpatela
+
+   repita
+    repita
+     escreva("Informe o número do candidato: ")
+     leia(voto)
+     escreva(".")
+
+     escolha voto
+     caso numeroCandidato1
+          escreval(numeroCandidato1," - ",nomeCandidato1)
+          contCandidato1 <- contCandidato1 + 1
+     caso numeroCandidato2
+          escreval(numeroCandidato2," - ",nomeCandidato2)
+          contCandidato2 <- contCandidato2 + 1
+     caso numeroCandidato3
+          escreval(numeroCandidato3," - ",nomeCandidato3)
+          contCandidato3 <- contCandidato3 + 1
+     caso 0
+          escreval("0 - voto em branco")
+          contBranco <- contBranco + 1
+     outrocaso
+          escreval("Voto em nulo")
+          contNulo <- contNulo + 1
+     fimescolha
+
+     escreva("")
+     escreva("Deseja confirmar o seu voto? (s) ou (n)")
+     
+     se(voto = numeroCandidato1)e(resposta="n")ENTAO
+          contCandidato1 <- contCandidato1 - 1
+     fimse
+     se(voto = numeroCandidato2)e(resposta="n")ENTAO
+          contCandidato2 <- contCandidato2 - 1
+     fimse
+     se(voto = numeroCandidato3)e(resposta="n")ENTAO
+          contCandidato3 <- contCandidato3 - 1
+     fimse
+     se(voto = 0)e(resposta="n")ENTAO
+          contBranco <- contBranco - 1
+     fimse
+     se(voto = -1)e(resposta="n")ENTAO
+          contNulo <- contNulo - 1
+     fimse
+     
+     leia(resposta)
+    ate(resposta <> "n")
+     escreva("Ainda há mais eleitores para votar? (s) ou (n)")
+     leia(resposta2)
+    ate(resposta2 <> "s")
+
+
+   escreval("============ZERÉZIMA============")
+   escreval(nomeCandidato1, ":", contCandidato1)
+   escreval(nomeCandidato2, ":", contCandidato2)
+   escreval(nomeCandidato3, ":", contCandidato3)
+   escreval("0-Branco", contBranco)
+   escreval("Votos Nulos", contNulo)
 Fimalgoritmo
