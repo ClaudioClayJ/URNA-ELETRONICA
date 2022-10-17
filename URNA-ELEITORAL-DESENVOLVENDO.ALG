@@ -123,6 +123,7 @@ Inicio
      leia(resposta2)
     ate(resposta2 <> "s")
 
+    limpatela
 
    escreval("============BOLETIM DE URNA============")
    escreval(nomeCandidato1, ":", contCandidato1)
