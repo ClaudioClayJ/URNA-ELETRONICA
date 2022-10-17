@@ -4,7 +4,7 @@ Algoritmo "URNA-ELEITORAL"
 // Autor(a)    : Nome Claudio Clay
 // Data atual  : 14/10/2022
 Var
-// Seção de Declarações das variáveis
+// Seção de variáveis
    numeroCandidato1: inteiro
    numeroCandidato2: inteiro
    numeroCandidato3: inteiro
@@ -22,7 +22,6 @@ Var
    resposta2: caracter
 
 Inicio
-// Seção de Comandos, procedimento, funções, operadores, etc...
 
    contCandidato1 <- 0
    contCandidato2 <- 0
@@ -30,7 +29,7 @@ Inicio
    contNulo <- 0
    contBranco <- 0
 
-   //Solicita o numero e o nome do candidato 1
+
    
    escreval("-----INICIANDO ELEIÇÃO-----")
    
@@ -63,12 +62,12 @@ Inicio
    escreval("")
    escreval("iniciando a eleição.")
 
-   //timer(500)
+   timer(500)
 
-   //para i de 0 ate 10 passo 1 faca
-   //escreva(".")
+   para i de 0 ate 10 passo 1 faca
+   escreva(".")
 
-   //fimpara
+   fimpara
 
    timer(0)
 
@@ -76,6 +75,7 @@ Inicio
 
    repita
     repita
+    limpatela
      escreva("Informe o número do candidato: ")
      leia(voto)
      escreva(".")
@@ -124,7 +124,7 @@ Inicio
     ate(resposta2 <> "s")
 
 
-   escreval("============ZERÉZIMA============")
+   escreval("============BOLETIM DE URNA============")
    escreval(nomeCandidato1, ":", contCandidato1)
    escreval(nomeCandidato2, ":", contCandidato2)
    escreval(nomeCandidato3, ":", contCandidato3)
